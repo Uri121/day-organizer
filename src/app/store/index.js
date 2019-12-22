@@ -1,16 +1,31 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
-import { defaultState } from "../../server/defaultState";
+import { defaultState } from "./../../server/defaultState";
 import { createLogger } from "redux-logger";
 import createSageMiddleware from "redux-saga";
 
 const sagaMiddleware = createSageMiddleware();
-import * as sagas from "./sagas.mock";
+import * as sagas from "./sagas";
 import * as mutations from "./mutations";
 
 export const store = createStore(
   combineReducers({
-    tasks(tasks = defaultState.tasks, action) {
+    session(userSession = defaultState.session || {}, action) {
+      let { type, auth, session } = action;
+      switch (type) {
+        case mutations.SET_STATE:
+          return{...userSession,id:action.state.session.id};
+        case mutations.REQUSER_AUTH_USER:
+          return { ...userSession, auth: mutations.AUTHENTICATING };
+        case mutations.PROCESSING_AUTH_USER:
+          return { ...userSession, auth };
+        default:
+          return userSession;
+      }
+    },
+    tasks(tasks =  [], action) {
       switch (action.type) {
+        case mutations.SET_STATE:
+          return action.state.tasks;
         case mutations.CREATE_TASK:
           return [
             ...tasks,
@@ -28,29 +43,32 @@ export const store = createStore(
               ? { ...task, isComplete: action.isComplete }
               : task;
           });
-          case mutations.SET_TASK_NAME:
-                return tasks.map(task => {
-                  return task.id === action.taskID
-                    ? { ...task, name:action.name }
-                    : task;
-                });
-                case mutations.SET_TASK_GROUP:
-                        return tasks.map(task => {
-                          return task.id === action.taskID
-                            ? { ...task,group:action.groupID }
-                            : task;
-                        });
-          
+        case mutations.SET_TASK_NAME:
+          return tasks.map(task => {
+            return task.id === action.taskID
+              ? { ...task, name: action.name }
+              : task;
+          });
+        case mutations.SET_TASK_GROUP:
+          return tasks.map(task => {
+            return task.id === action.taskID
+              ? { ...task, group: action.groupID }
+              : task;
+          });
       }
       return tasks;
     },
-    comments(comments = defaultState.comments) {
+    comments(comments = []) {
       return comments;
     },
-    groups(groups = defaultState.groups) {
+    groups(groups =  [],action) {
+      switch(action.type){
+        case mutations.SET_STATE:
+          return action.state.groups;
+      }
       return groups;
     },
-    users(users = defaultState.users) {
+    users(users =  []) {
       return users;
     }
   }),
