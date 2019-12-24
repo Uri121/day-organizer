@@ -3,10 +3,11 @@ import {Link } from 'react-router-dom';
 import React  from 'react';
 
 const Navigation =()=>(
-    <div>
+    <div className="navigation">
         <Link to="/dashboard">
-        <h1>My App</h1>
+        <h1>Day Organizer</h1>
         </Link>
+       
     </div>
 );
 export const ConnectedNavigation = connect(state=>state)(Navigation);

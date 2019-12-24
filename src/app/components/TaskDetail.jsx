@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import * as mutations from "../store/mutations";
+import done from '../assets/done.png';
 
 const TaskDetail = ({
   id,
@@ -13,16 +14,14 @@ const TaskDetail = ({
   setTaskGroup,
   setTaskName
 }) => (
-  <div>
-    <div>
+  <div className="taskDetail-container">
+
       <input onChange={setTaskName} value={task.name}></input>
-    </div>
-    <div>
-      <button onClick={() => setTaskCompletion(id, !isComplete)}>
+
+      <button className="btn-complete" onClick={() => setTaskCompletion(id, !isComplete)}>
         {isComplete ? `Reopen` : `Complete`}
       </button>
-    </div>
-    <div>
+
       <select onChange={setTaskGroup} value={task.group}>
         {groups.map(groups => (
           <option key={groups.id} value={groups.id}>
@@ -30,12 +29,10 @@ const TaskDetail = ({
           </option>
         ))}
       </select>
-    </div>
-    <div>
+
       <Link to="/dashnoard">
-        <button>Done</button>
+        <button className="btn-done"><img src={done}alt=""></img></button>
       </Link>
-    </div>
   </div>
 );
 

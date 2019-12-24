@@ -18,7 +18,7 @@ const RouteGuard = Component =>({match})=>
 export const Main = () => (
   <Router history={history}>
     <Provider store={store}>
-      <div>
+      <div className="container">
         <ConnectedNavigation />
         <Route exact path="/" component={ConnectedLogin} />
         <Route
