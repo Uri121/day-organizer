@@ -1,7 +1,8 @@
 $primaryBtn: #464159;
 $secBtn: #6c7b95;
 $backGround: #eae8e8;
-$btnTextColor: #c7f0db;
+
+$desktop: 840px;
 
 $boxShdow: -12px -12px 12px 0 rgba(255, 255, 255, 1),
   12px 12px 12px 0 rgba(0, 0, 0, 0.06);
@@ -11,6 +12,12 @@ $boxShdow: -12px -12px 12px 0 rgba(255, 255, 255, 1),
   justify-content: center;
   align-items: center;
   flex-direction: $direction;
+}
+
+@mixin desktop{
+  @media(min-width:#{$desktop}){
+    @content;
+  }
 }
 
 body {
@@ -28,16 +35,20 @@ body {
   @include flexCenter(column);
 
   a {
-    background: $backGround;
-    box-shadow: $boxShdow;
     text-decoration: none;
     margin: 4rem 0;
     border-radius: 20px;
     padding: 0.8rem;
+    @include desktop{
+      margin: 0;
+    }
     h1 {
       margin: 2rem 0;
       font-size: 5rem;
       color: $primaryBtn;
+      @include desktop{
+        margin: 0;
+      }
     }
   }
 
@@ -45,10 +56,14 @@ body {
 
 .container {
   margin-top: 5rem;
+  @include desktop{
+    margin-top: 3.2rem;
+  }
   @include flexCenter(column);
   .sign-up {
     margin: 1rem 0;
     position: absolute;
+    text-decoration: none;
     top: 10px;
     right: 25px;
     color: $primaryBtn;
@@ -57,8 +72,14 @@ body {
     margin: 4rem 0;
     border-radius: 20px;
     padding: 0.8rem;
+    @include desktop{
+      margin: 2rem 0;
+    }
     h5 {
       font-size: 2rem;
+      @include desktop{
+       font-size: 1.3rem;
+      }
     }
   }
   .card {
@@ -67,13 +88,18 @@ body {
     width: 80%;
     border-radius: 20px;
     box-shadow: $boxShdow;
-
+      @include desktop{
+        width: fit-content;
+      }
     .card-title {
       color: $secBtn;
       text-align: center;
       h2 {
         margin-top: 1rem;
         font-size: 4rem;
+        @include desktop{
+          font-size: 2.5rem;
+        }
       }
     }
     .card-body {
@@ -89,18 +115,32 @@ body {
         border: 1px solid $secBtn;
         padding: 0.6rem 1.2rem;
         font-size: 3rem;
+        @include desktop{
+          font-size: 1.3rem;
+          height: 3rem;
+          width: 80%;
+        }
       }
       #user {
         background: url(../assets/user.svg) no-repeat left center;
         padding-left: 77px;
         background-size: 50px 50px;
         background-position: 12px 14px;
+
+        @include desktop{
+          padding-left: 55px;
+          background-size: 30px 30px;
+          background-position: 12px 7px;
+  
+        }
       }
       #password {
         background: url(../assets/password.svg) no-repeat left center;
-        padding-left: 77px;
-        background-size: 50px 50px;
-        background-position: 12px 14px;
+        @include desktop{
+          padding-left: 55px;
+          background-size: 30px 30px;
+          background-position: 12px 7px;
+        }
       }
       button {
         display: inline-block;
@@ -114,10 +154,16 @@ body {
         font-size: 3rem;
         cursor: pointer;
         margin-top: 1rem;
-
+        @include desktop{
+          font-size: 1.8rem;
+        }
         img {
           height: 40px;
           width: 50px;
+          @include desktop{
+            height: 30px;
+            width: 50px;
+          }
         }
       }
     }
@@ -127,6 +173,9 @@ body {
 .dashboard {
   display: grid;
   grid-template-columns: 1fr;
+  @include desktop{
+    grid-template-columns: 1fr 1fr;
+  }
   justify-items: center;
   .taskList-container {
     align-self: center;
@@ -135,25 +184,32 @@ body {
     background: $backGround;
     width: 90%;
     align-self: center;
-    margin: 1rem 0;
+    margin: 3rem 0;
     padding: 1.2rem 1rem;
     h3 {
       text-align: center;
       font-size: 3.5rem;
       color: $primaryBtn;
+      @include desktop{
+        font-size: 2rem;
+      }
     }
     .tasks {
       display: grid;
-
-      box-shadow: $boxShdow;
-      border-radius: 20px;
-      background: $backGround;
       margin: 1rem 0.6rem;
       padding: 1.2rem 1.5rem;
       a {
         text-decoration: none;
+      box-shadow: $boxShdow;
+      border-radius: 20px;
+      background: $backGround;
+      margin: 0.7rem 0.3rem;
+      padding: .3rem .7rem;
         font-size: 3rem;
         color: $secBtn;
+        @include desktop{
+          font-size: 1.5rem;
+        }
       }
       button {
         display: inline-block;
@@ -168,9 +224,16 @@ body {
         font-size: 3rem;
         cursor: pointer;
         margin-top: 1.4rem;
+        @include desktop{
+          font-size: 1.5rem;
+        }
         img {
           width: 70px;
           height: 70px;
+          @include desktop{
+            width: 50px;
+            height: 50px;
+          }
         }
       }
     }
@@ -182,28 +245,38 @@ body {
 .taskDetail-container {
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "box1 box2"  
+    "box3 ."
+    ".    box4";
     box-shadow: $boxShdow;
     border-radius: 20px;
     background: $backGround;
-    width: 60%;
+    width: 85%;
     margin: 0.7rem 0;
     padding: 1.2rem 1rem;
 
     input {
+      grid-area: box1;
         border-radius: 20px;
         align-self: center;
         justify-self: center;
         height: 5rem;
-        width: 100%;
+        width: 80%;
         overflow: hidden;
-        margin: .9rem 0;
+        margin: .9rem 1rem;
         border: 1px solid $secBtn;
         background: $backGround;
         padding: 0.6rem 1.2rem;
         font-size: 3rem;
+        @include desktop{
+          font-size: 2rem;
+          height: 3rem;
+        }
       }
       .btn-complete {
-        display: inline-block;
+        grid-area: box2;
         align-self: center;
         justify-self: center;
         border-radius: 20px;
@@ -216,12 +289,16 @@ body {
         font-size: 2rem;
         cursor: pointer;
         margin: .9rem 0;
+        @include desktop{
+          font-size: 1.5rem;
+        }
       }
       select{
+        grid-area: box3;
         border-radius: 20px;
         align-self: center;
         justify-self: center;
-        font-size: 1rem;
+        font-size: 2rem;
         box-shadow: $boxShdow;
         background: $backGround;
         border: 0;
@@ -230,15 +307,22 @@ body {
         overflow: hidden;
         font-size: 2rem;
         margin: .9rem 0;
-        width: 70%;
+        width: 80%;
+        @include desktop{
+          font-size: 1.5rem;
+        }
       }
       select option{
           width: 100%;
           font-size: 0.7rem;
+          @include desktop{
+            font-size: 1.5rem;
+          }
       }
       a{
+        grid-area: box4;
        justify-self: end;
-        .btn-done{
+        .btn-done{   
             border-radius: 20px;    
             box-shadow: $boxShdow;
             margin: .9rem 0;
@@ -250,6 +334,10 @@ body {
             img {
                 width: 70px;
                 height: 70px;
+                @include desktop{
+                  width: 50px;
+                  height: 50px;
+                }
               }
           }
       }

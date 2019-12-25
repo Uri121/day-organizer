@@ -25,19 +25,28 @@ body {
 }
 
 .navigation a {
-  background: #eae8e8;
-  -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
-          box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
   text-decoration: none;
   margin: 4rem 0;
   border-radius: 20px;
   padding: 0.8rem;
 }
 
+@media (min-width: 840px) {
+  .navigation a {
+    margin: 0;
+  }
+}
+
 .navigation a h1 {
   margin: 2rem 0;
   font-size: 5rem;
   color: #464159;
+}
+
+@media (min-width: 840px) {
+  .navigation a h1 {
+    margin: 0;
+  }
 }
 
 .container {
@@ -57,9 +66,16 @@ body {
           flex-direction: column;
 }
 
+@media (min-width: 840px) {
+  .container {
+    margin-top: 3.2rem;
+  }
+}
+
 .container .sign-up {
   margin: 1rem 0;
   position: absolute;
+  text-decoration: none;
   top: 10px;
   right: 25px;
   color: #464159;
@@ -71,8 +87,20 @@ body {
   padding: 0.8rem;
 }
 
+@media (min-width: 840px) {
+  .container .sign-up {
+    margin: 2rem 0;
+  }
+}
+
 .container .sign-up h5 {
   font-size: 2rem;
+}
+
+@media (min-width: 840px) {
+  .container .sign-up h5 {
+    font-size: 1.3rem;
+  }
 }
 
 .container .card {
@@ -84,6 +112,14 @@ body {
           box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
 }
 
+@media (min-width: 840px) {
+  .container .card {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+
 .container .card .card-title {
   color: #6c7b95;
   text-align: center;
@@ -92,6 +128,12 @@ body {
 .container .card .card-title h2 {
   margin-top: 1rem;
   font-size: 4rem;
+}
+
+@media (min-width: 840px) {
+  .container .card .card-title h2 {
+    font-size: 2.5rem;
+  }
 }
 
 .container .card .card-body form {
@@ -121,6 +163,14 @@ body {
   font-size: 3rem;
 }
 
+@media (min-width: 840px) {
+  .container .card .card-body input {
+    font-size: 1.3rem;
+    height: 3rem;
+    width: 80%;
+  }
+}
+
 .container .card .card-body #user {
   background: url(../assets/user.svg) no-repeat left center;
   padding-left: 77px;
@@ -128,11 +178,24 @@ body {
   background-position: 12px 14px;
 }
 
+@media (min-width: 840px) {
+  .container .card .card-body #user {
+    padding-left: 55px;
+    background-size: 30px 30px;
+    background-position: 12px 7px;
+  }
+}
+
 .container .card .card-body #password {
   background: url(../assets/password.svg) no-repeat left center;
-  padding-left: 77px;
-  background-size: 50px 50px;
-  background-position: 12px 14px;
+}
+
+@media (min-width: 840px) {
+  .container .card .card-body #password {
+    padding-left: 55px;
+    background-size: 30px 30px;
+    background-position: 12px 7px;
+  }
 }
 
 .container .card .card-body button {
@@ -150,9 +213,22 @@ body {
   margin-top: 1rem;
 }
 
+@media (min-width: 840px) {
+  .container .card .card-body button {
+    font-size: 1.8rem;
+  }
+}
+
 .container .card .card-body button img {
   height: 40px;
   width: 50px;
+}
+
+@media (min-width: 840px) {
+  .container .card .card-body button img {
+    height: 30px;
+    width: 50px;
+  }
 }
 
 .dashboard {
@@ -161,6 +237,13 @@ body {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   justify-items: center;
+}
+
+@media (min-width: 840px) {
+  .dashboard {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
 }
 
 .dashboard .taskList-container {
@@ -173,7 +256,7 @@ body {
   background: #eae8e8;
   width: 90%;
   align-self: center;
-  margin: 1rem 0;
+  margin: 3rem 0;
   padding: 1.2rem 1rem;
 }
 
@@ -183,21 +266,35 @@ body {
   color: #464159;
 }
 
+@media (min-width: 840px) {
+  .dashboard .taskList-container h3 {
+    font-size: 2rem;
+  }
+}
+
 .dashboard .taskList-container .tasks {
   display: -ms-grid;
   display: grid;
-  -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
-          box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
-  border-radius: 20px;
-  background: #eae8e8;
   margin: 1rem 0.6rem;
   padding: 1.2rem 1.5rem;
 }
 
 .dashboard .taskList-container .tasks a {
   text-decoration: none;
+  -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  background: #eae8e8;
+  margin: 0.7rem 0.3rem;
+  padding: .3rem .7rem;
   font-size: 3rem;
   color: #6c7b95;
+}
+
+@media (min-width: 840px) {
+  .dashboard .taskList-container .tasks a {
+    font-size: 1.5rem;
+  }
 }
 
 .dashboard .taskList-container .tasks button {
@@ -217,9 +314,22 @@ body {
   margin-top: 1.4rem;
 }
 
+@media (min-width: 840px) {
+  .dashboard .taskList-container .tasks button {
+    font-size: 1.5rem;
+  }
+}
+
 .dashboard .taskList-container .tasks button img {
   width: 70px;
   height: 70px;
+}
+
+@media (min-width: 840px) {
+  .dashboard .taskList-container .tasks button img {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .taskDetail-container {
@@ -227,16 +337,22 @@ body {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: "box1 box2"   "box3 ." ".    box4";
   -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
           box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
   border-radius: 20px;
   background: #eae8e8;
-  width: 60%;
+  width: 85%;
   margin: 0.7rem 0;
   padding: 1.2rem 1rem;
 }
 
 .taskDetail-container input {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: box1;
   border-radius: 20px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -244,17 +360,26 @@ body {
   -ms-grid-column-align: center;
       justify-self: center;
   height: 5rem;
-  width: 100%;
+  width: 80%;
   overflow: hidden;
-  margin: .9rem 0;
+  margin: .9rem 1rem;
   border: 1px solid #6c7b95;
   background: #eae8e8;
   padding: 0.6rem 1.2rem;
   font-size: 3rem;
 }
 
+@media (min-width: 840px) {
+  .taskDetail-container input {
+    font-size: 2rem;
+    height: 3rem;
+  }
+}
+
 .taskDetail-container .btn-complete {
-  display: inline-block;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: box2;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -273,14 +398,23 @@ body {
   margin: .9rem 0;
 }
 
+@media (min-width: 840px) {
+  .taskDetail-container .btn-complete {
+    font-size: 1.5rem;
+  }
+}
+
 .taskDetail-container select {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: box3;
   border-radius: 20px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
-  font-size: 1rem;
+  font-size: 2rem;
   -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
           box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
   background: #eae8e8;
@@ -290,7 +424,13 @@ body {
   overflow: hidden;
   font-size: 2rem;
   margin: .9rem 0;
-  width: 70%;
+  width: 80%;
+}
+
+@media (min-width: 840px) {
+  .taskDetail-container select {
+    font-size: 1.5rem;
+  }
 }
 
 .taskDetail-container select option {
@@ -298,7 +438,16 @@ body {
   font-size: 0.7rem;
 }
 
+@media (min-width: 840px) {
+  .taskDetail-container select option {
+    font-size: 1.5rem;
+  }
+}
+
 .taskDetail-container a {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: box4;
   -ms-grid-column-align: end;
       justify-self: end;
 }
@@ -318,5 +467,12 @@ body {
 .taskDetail-container a .btn-done img {
   width: 70px;
   height: 70px;
+}
+
+@media (min-width: 840px) {
+  .taskDetail-container a .btn-done img {
+    width: 50px;
+    height: 50px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
