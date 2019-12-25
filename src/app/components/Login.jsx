@@ -7,7 +7,7 @@ import * as mutations from "../store/mutations";
 const LoginComponent = ({ authUser, authenticated }) => {
   return (
     <div className="container">
-    <Link to="#" className="sign-up">
+    <Link to="/signup" className="sign-up">
         <h5>Sign up</h5>
         </Link>
       <div className="card">

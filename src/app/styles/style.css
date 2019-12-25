@@ -24,9 +24,14 @@ body {
           flex-direction: column;
 }
 
+.navigation h4 {
+  color: #464159;
+  font-family: "Poppins";
+}
+
 .navigation a {
   text-decoration: none;
-  margin: 4rem 0;
+  margin: 2rem 0;
   border-radius: 20px;
   padding: 0.8rem;
 }
@@ -39,7 +44,7 @@ body {
 
 .navigation a h1 {
   margin: 2rem 0;
-  font-size: 5rem;
+  font-size: 3rem;
   color: #464159;
 }
 
@@ -50,7 +55,7 @@ body {
 }
 
 .container {
-  margin-top: 5rem;
+  margin-top: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,7 +87,7 @@ body {
   background: #eae8e8;
   -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
           box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
-  margin: 4rem 0;
+  margin: 1.5rem 0;
   border-radius: 20px;
   padding: 0.8rem;
 }
@@ -94,7 +99,7 @@ body {
 }
 
 .container .sign-up h5 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 @media (min-width: 840px) {
@@ -127,7 +132,7 @@ body {
 
 .container .card .card-title h2 {
   margin-top: 1rem;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 @media (min-width: 840px) {
@@ -154,13 +159,13 @@ body {
 
 .container .card .card-body input {
   border-radius: 20px;
-  height: 5rem;
+  height: 3rem;
   width: 100%;
   overflow: hidden;
   margin: 0.7rem 0;
   border: 1px solid #6c7b95;
   padding: 0.6rem 1.2rem;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 @media (min-width: 840px) {
@@ -173,8 +178,8 @@ body {
 
 .container .card .card-body #user {
   background: url(../assets/user.svg) no-repeat left center;
-  padding-left: 77px;
-  background-size: 50px 50px;
+  padding-left: 50px;
+  background-size: 25px 25px;
   background-position: 12px 14px;
 }
 
@@ -188,6 +193,9 @@ body {
 
 .container .card .card-body #password {
   background: url(../assets/password.svg) no-repeat left center;
+  padding-left: 50px;
+  background-size: 25px 25px;
+  background-position: 12px 14px;
 }
 
 @media (min-width: 840px) {
@@ -208,7 +216,7 @@ body {
   color: #464159;
   padding: 0.7rem 1rem;
   overflow: hidden;
-  font-size: 3rem;
+  font-size: 1.5rem;
   cursor: pointer;
   margin-top: 1rem;
 }
@@ -220,7 +228,7 @@ body {
 }
 
 .container .card .card-body button img {
-  height: 40px;
+  height: 30px;
   width: 50px;
 }
 
@@ -255,14 +263,21 @@ body {
   border-radius: 20px;
   background: #eae8e8;
   width: 90%;
-  align-self: center;
   margin: 3rem 0;
   padding: 1.2rem 1rem;
 }
 
+@media (min-width: 840px) {
+  .dashboard .taskList-container {
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+  }
+}
+
 .dashboard .taskList-container h3 {
   text-align: center;
-  font-size: 3.5rem;
+  font-size: 2rem;
   color: #464159;
 }
 
@@ -281,13 +296,15 @@ body {
 
 .dashboard .taskList-container .tasks a {
   text-decoration: none;
+  -ms-grid-column-align: start;
+      justify-self: start;
   -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
           box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
   border-radius: 20px;
   background: #eae8e8;
   margin: 0.7rem 0.3rem;
   padding: .3rem .7rem;
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: #6c7b95;
 }
 
@@ -321,8 +338,8 @@ body {
 }
 
 .dashboard .taskList-container .tasks button img {
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
 }
 
 @media (min-width: 840px) {
@@ -359,14 +376,14 @@ body {
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
-  height: 5rem;
+  height: 3rem;
   width: 80%;
   overflow: hidden;
   margin: .9rem 1rem;
   border: 1px solid #6c7b95;
   background: #eae8e8;
   padding: 0.6rem 1.2rem;
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 
 @media (min-width: 840px) {
@@ -386,14 +403,13 @@ body {
   -ms-grid-column-align: center;
       justify-self: center;
   border-radius: 20px;
-  font-size: 2rem;
   -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
           box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
   border: 0;
   color: #464159;
   padding: 0.6rem 0.8rem;
   overflow: hidden;
-  font-size: 2rem;
+  font-size: 1rem;
   cursor: pointer;
   margin: .9rem 0;
 }
@@ -414,7 +430,7 @@ body {
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
-  font-size: 2rem;
+  font-size: 1rem;
   -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
           box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
   background: #eae8e8;
@@ -422,7 +438,6 @@ body {
   color: #464159;
   padding: 0.6rem 0.8rem;
   overflow: hidden;
-  font-size: 2rem;
   margin: .9rem 0;
   width: 80%;
 }
@@ -434,8 +449,7 @@ body {
 }
 
 .taskDetail-container select option {
-  width: 100%;
-  font-size: 0.7rem;
+  font-size: 1rem;
 }
 
 @media (min-width: 840px) {
@@ -465,8 +479,8 @@ body {
 }
 
 .taskDetail-container a .btn-done img {
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
 }
 
 @media (min-width: 840px) {

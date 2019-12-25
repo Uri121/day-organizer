@@ -4,22 +4,18 @@ import { connectDB } from "./connect-db";
 
 const authenticationTokens = [];
 
-async function assembleUserState(user) {
+export async function assembleUserState(user){
   let db = await connectDB();
 
-  let tasks = await db
-    .collection("tasks")
-    .find({ owner: user.id })
-    .toArray();
-  let groups = await db
-    .collection("groups")
-    .find({ owner: user.id })
-    .toArray();
+  let tasks = await db.collection(`tasks`).find({owner:user.id}).toArray();
+ 
+  let users =await db.collection(`users`).find({id:user.id}).toArray();
 
   return {
-    tasks,
-    groups,
-    session: { auth: "AUTHENTICATED", id: user.id }
+      session:{authenticated:`AUTHENTICATED`,id:user.id},
+      groups:await db.collection(`groups`).find({owner:user.id}).toArray(),
+      tasks,
+      users,
   };
 }
 
@@ -53,4 +49,43 @@ export const authenticationRoute = app => {
 
     res.send({ token, state });
   });
+
+  app.post('/user/create',async(req,res)=>{
+    let {username,password} = req.body;
+    console.log(username,password);
+    let db = await connectDB();
+    let collection = db.collection(`users`);
+    let user = await collection.findOne({name:username});
+    if (user) {
+        res.status(500).send({message:"A user with that account name already exists."});
+        return;
+    };
+
+    let userID = uuid();
+    
+
+    await collection.insertOne({
+        name:username,
+        id:userID,
+        passwordHash:md5(password)
+    });
+
+    await db.collection(`groups`).insertMany([{
+        id: uuid(),
+        owner:userID,
+        name: `To Do`
+    },{
+      id: uuid(),
+      owner:userID,
+      name: `Doing`
+    },{
+      id:uuid(),
+      owner:userID,
+      name: `Done`
+    }]);
+
+    let state = await assembleUserState({id:userID,name:username});
+
+    res.status(200).send({userID,state});
+});
 };

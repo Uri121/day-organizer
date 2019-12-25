@@ -33,10 +33,13 @@ body {
 
 .navigation {
   @include flexCenter(column);
-
+  h4{
+    color: $primaryBtn;
+    font-family: "Poppins";
+  }
   a {
     text-decoration: none;
-    margin: 4rem 0;
+    margin: 2rem 0;
     border-radius: 20px;
     padding: 0.8rem;
     @include desktop{
@@ -44,22 +47,24 @@ body {
     }
     h1 {
       margin: 2rem 0;
-      font-size: 5rem;
+      font-size: 3rem;
       color: $primaryBtn;
       @include desktop{
         margin: 0;
       }
     }
+ 
   }
 
 }
 
 .container {
-  margin-top: 5rem;
+  margin-top: 3rem;
+  @include flexCenter(column);
+
   @include desktop{
     margin-top: 3.2rem;
   }
-  @include flexCenter(column);
   .sign-up {
     margin: 1rem 0;
     position: absolute;
@@ -69,17 +74,22 @@ body {
     color: $primaryBtn;
     background: $backGround;
     box-shadow: $boxShdow;
-    margin: 4rem 0;
+    margin: 1.5rem 0;
     border-radius: 20px;
     padding: 0.8rem;
+
+
     @include desktop{
       margin: 2rem 0;
     }
+
     h5 {
-      font-size: 2rem;
+      font-size: 1.5rem;
+
       @include desktop{
        font-size: 1.3rem;
       }
+
     }
   }
   .card {
@@ -88,6 +98,7 @@ body {
     width: 80%;
     border-radius: 20px;
     box-shadow: $boxShdow;
+    
       @include desktop{
         width: fit-content;
       }
@@ -96,7 +107,7 @@ body {
       text-align: center;
       h2 {
         margin-top: 1rem;
-        font-size: 4rem;
+        font-size: 3rem;
         @include desktop{
           font-size: 2.5rem;
         }
@@ -108,13 +119,13 @@ body {
       }
       input {
         border-radius: 20px;
-        height: 5rem;
+        height: 3rem;
         width: 100%;
         overflow: hidden;
         margin: 0.7rem 0;
         border: 1px solid $secBtn;
         padding: 0.6rem 1.2rem;
-        font-size: 3rem;
+        font-size: 2rem;
         @include desktop{
           font-size: 1.3rem;
           height: 3rem;
@@ -123,8 +134,8 @@ body {
       }
       #user {
         background: url(../assets/user.svg) no-repeat left center;
-        padding-left: 77px;
-        background-size: 50px 50px;
+        padding-left: 50px;
+        background-size: 25px 25px;
         background-position: 12px 14px;
 
         @include desktop{
@@ -136,6 +147,9 @@ body {
       }
       #password {
         background: url(../assets/password.svg) no-repeat left center;
+        padding-left: 50px;
+        background-size: 25px 25px;
+        background-position: 12px 14px;
         @include desktop{
           padding-left: 55px;
           background-size: 30px 30px;
@@ -151,14 +165,14 @@ body {
         color: $primaryBtn;
         padding: 0.7rem 1rem;
         overflow: hidden;
-        font-size: 3rem;
+        font-size: 1.5rem;
         cursor: pointer;
         margin-top: 1rem;
         @include desktop{
           font-size: 1.8rem;
         }
         img {
-          height: 40px;
+          height: 30px;
           width: 50px;
           @include desktop{
             height: 30px;
@@ -183,12 +197,15 @@ body {
     border-radius: 20px;
     background: $backGround;
     width: 90%;
-    align-self: center;
     margin: 3rem 0;
     padding: 1.2rem 1rem;
+
+    @include desktop{
+      align-self: start;
+    }
     h3 {
       text-align: center;
-      font-size: 3.5rem;
+      font-size: 2rem;
       color: $primaryBtn;
       @include desktop{
         font-size: 2rem;
@@ -200,12 +217,13 @@ body {
       padding: 1.2rem 1.5rem;
       a {
         text-decoration: none;
+        justify-self: start;
       box-shadow: $boxShdow;
       border-radius: 20px;
       background: $backGround;
       margin: 0.7rem 0.3rem;
       padding: .3rem .7rem;
-        font-size: 3rem;
+        font-size: 1.5rem;
         color: $secBtn;
         @include desktop{
           font-size: 1.5rem;
@@ -228,8 +246,8 @@ body {
           font-size: 1.5rem;
         }
         img {
-          width: 70px;
-          height: 70px;
+          width: 40px;
+          height: 40px;
           @include desktop{
             width: 50px;
             height: 50px;
@@ -262,14 +280,14 @@ body {
         border-radius: 20px;
         align-self: center;
         justify-self: center;
-        height: 5rem;
+        height: 3rem;
         width: 80%;
         overflow: hidden;
         margin: .9rem 1rem;
         border: 1px solid $secBtn;
         background: $backGround;
         padding: 0.6rem 1.2rem;
-        font-size: 3rem;
+        font-size: 1.5rem;
         @include desktop{
           font-size: 2rem;
           height: 3rem;
@@ -280,13 +298,12 @@ body {
         align-self: center;
         justify-self: center;
         border-radius: 20px;
-        font-size: 2rem;
         box-shadow: $boxShdow;
         border: 0;
         color: $primaryBtn;
         padding: 0.6rem 0.8rem;
         overflow: hidden;
-        font-size: 2rem;
+        font-size: 1rem;
         cursor: pointer;
         margin: .9rem 0;
         @include desktop{
@@ -298,14 +315,13 @@ body {
         border-radius: 20px;
         align-self: center;
         justify-self: center;
-        font-size: 2rem;
+        font-size: 1rem;
         box-shadow: $boxShdow;
         background: $backGround;
         border: 0;
         color: $primaryBtn;
         padding: 0.6rem 0.8rem;
         overflow: hidden;
-        font-size: 2rem;
         margin: .9rem 0;
         width: 80%;
         @include desktop{
@@ -313,8 +329,7 @@ body {
         }
       }
       select option{
-          width: 100%;
-          font-size: 0.7rem;
+          font-size: 1rem;
           @include desktop{
             font-size: 1.5rem;
           }
@@ -332,8 +347,8 @@ body {
             padding: 0.6rem 0.8rem;
             overflow: hidden;
             img {
-                width: 70px;
-                height: 70px;
+                width: 40px;
+                height: 40px;
                 @include desktop{
                   width: 50px;
                   height: 50px;

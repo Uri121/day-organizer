@@ -11,7 +11,7 @@ const url =
 export default function* taskCreationSaga() {
   while (true) {
     const { groupID } = yield take(mutations.REQUSET_TASK_CREATION);
-    const ownerID = "U1";
+    const ownerID = yield select(state=>state.session.id);
     const taskID = uuid();
     yield put(mutations.createTask(taskID, groupID, ownerID));
     const { res } = yield axios.post(url + `/task/new`, {
@@ -57,11 +57,33 @@ export function* userAuthSaga() {
       }
       console.log("Authenticated!", data);
       yield put(mutations.setState(data.state));
-      yield put(mutations.processAuthUser(mutations.AUTHENTICATED));
+      yield put(mutations.processAuthUser(mutations.AUTHENTICATED,{
+        id: data.state.session.id,
+        token:data.token
+      }));
       history.push("/dashboard");
     } catch (e) {
       console.log("cant authenticate");
       yield put(mutations.processAuthUser(mutations.NOT_AUTHENTICATED));
     }
+  }
+}
+
+export function* userAccountCreationSaga(){
+  while (true) {
+      const {username, password } = yield take(mutations.REQUEST_USER_ACCOUNT_CREATION);
+      try {
+          const { data } = yield axios.post(url + `/user/create`, {username,password});
+          console.log(data);
+
+          yield put(mutations.setState({...data.state,session:{id:data.userID}}));
+          yield put(mutations.processAuthUser(mutations.AUTHENTICATED));
+
+          history.push('/dashboard');
+
+      } catch (e) {
+          console.error("Error",e);
+          yield put(mutations.processAuthUser(mutations.USERNAME_RESERVED));
+      }
   }
 }

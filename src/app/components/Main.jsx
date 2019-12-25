@@ -8,6 +8,7 @@ import { ConnectedLogin } from "./Login";
 import { Router, Route } from "react-router-dom";
 import { history } from "../store/history";
 import { Redirect } from "react-router";
+import { ConnectedSignup } from './Signup';
 
 const RouteGuard = Component =>({match})=>
     !store.getState().session.auth ?
@@ -21,6 +22,7 @@ export const Main = () => (
       <div className="container">
         <ConnectedNavigation />
         <Route exact path="/" component={ConnectedLogin} />
+        <Route exact path="/signup" component={ConnectedSignup} />
         <Route
           exact
           path="/dashboard"

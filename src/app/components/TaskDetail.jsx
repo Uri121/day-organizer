@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import * as mutations from "../store/mutations";
-import done from '../assets/done.png';
+import done from "../assets/done.png";
 
 const TaskDetail = ({
   id,
@@ -15,24 +15,28 @@ const TaskDetail = ({
   setTaskName
 }) => (
   <div className="taskDetail-container">
+    <input onChange={setTaskName} value={task.name}></input>
 
-      <input onChange={setTaskName} value={task.name}></input>
+    <button
+      className="btn-complete"
+      onClick={() => setTaskCompletion(id, !isComplete)}
+    >
+      {isComplete ? `Reopen` : `Complete`}
+    </button>
 
-      <button className="btn-complete" onClick={() => setTaskCompletion(id, !isComplete)}>
-        {isComplete ? `Reopen` : `Complete`}
+    <select onChange={setTaskGroup} value={task.group}>
+      {groups.map(groups => (
+        <option key={groups.id} value={groups.id}>
+          {groups.name}
+        </option>
+      ))}
+    </select>
+
+    <Link to="/dashboard">
+      <button className="btn-done">
+        <img src={done} alt=""></img>
       </button>
-
-      <select onChange={setTaskGroup} value={task.group}>
-        {groups.map(groups => (
-          <option key={groups.id} value={groups.id}>
-            {groups.name}
-          </option>
-        ))}
-      </select>
-
-      <Link to="/dashnoard">
-        <button className="btn-done"><img src={done}alt=""></img></button>
-      </Link>
+    </Link>
   </div>
 );
 

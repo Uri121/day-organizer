@@ -7,6 +7,7 @@ const sagaMiddleware = createSageMiddleware();
 import * as sagas from "./sagas";
 import * as mutations from "./mutations";
 
+
 export const store = createStore(
   combineReducers({
     session(userSession = defaultState.session || {}, action) {
@@ -68,8 +69,12 @@ export const store = createStore(
       }
       return groups;
     },
-    users(users =  []) {
-      return users;
+    users(users = defaultState.groups,action) {
+      switch(action.type){
+        case mutations.SET_STATE:
+          return action.state.users;
+      }
+    return users;
     }
   }),
   applyMiddleware(createLogger(), sagaMiddleware)
