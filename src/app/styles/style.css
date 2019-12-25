@@ -1,0 +1,322 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background: #eae8e8;
+  height: 100%;
+  background-size: cover;
+  font-family: "Poppins";
+}
+
+.navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.navigation a {
+  background: #eae8e8;
+  -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  margin: 4rem 0;
+  border-radius: 20px;
+  padding: 0.8rem;
+}
+
+.navigation a h1 {
+  margin: 2rem 0;
+  font-size: 5rem;
+  color: #464159;
+}
+
+.container {
+  margin-top: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .sign-up {
+  margin: 1rem 0;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #464159;
+  background: #eae8e8;
+  -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+  margin: 4rem 0;
+  border-radius: 20px;
+  padding: 0.8rem;
+}
+
+.container .sign-up h5 {
+  font-size: 2rem;
+}
+
+.container .card {
+  background: #eae8e8;
+  border: 0;
+  width: 80%;
+  border-radius: 20px;
+  -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+}
+
+.container .card .card-title {
+  color: #6c7b95;
+  text-align: center;
+}
+
+.container .card .card-title h2 {
+  margin-top: 1rem;
+  font-size: 4rem;
+}
+
+.container .card .card-body form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .card .card-body input {
+  border-radius: 20px;
+  height: 5rem;
+  width: 100%;
+  overflow: hidden;
+  margin: 0.7rem 0;
+  border: 1px solid #6c7b95;
+  padding: 0.6rem 1.2rem;
+  font-size: 3rem;
+}
+
+.container .card .card-body #user {
+  background: url(../assets/user.svg) no-repeat left center;
+  padding-left: 77px;
+  background-size: 50px 50px;
+  background-position: 12px 14px;
+}
+
+.container .card .card-body #password {
+  background: url(../assets/password.svg) no-repeat left center;
+  padding-left: 77px;
+  background-size: 50px 50px;
+  background-position: 12px 14px;
+}
+
+.container .card .card-body button {
+  display: inline-block;
+  border-radius: 20px;
+  background: #eae8e8;
+  -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+  border: 0;
+  color: #464159;
+  padding: 0.7rem 1rem;
+  overflow: hidden;
+  font-size: 3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.container .card .card-body button img {
+  height: 40px;
+  width: 50px;
+}
+
+.dashboard {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.dashboard .taskList-container {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  background: #eae8e8;
+  width: 90%;
+  align-self: center;
+  margin: 1rem 0;
+  padding: 1.2rem 1rem;
+}
+
+.dashboard .taskList-container h3 {
+  text-align: center;
+  font-size: 3.5rem;
+  color: #464159;
+}
+
+.dashboard .taskList-container .tasks {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  background: #eae8e8;
+  margin: 1rem 0.6rem;
+  padding: 1.2rem 1.5rem;
+}
+
+.dashboard .taskList-container .tasks a {
+  text-decoration: none;
+  font-size: 3rem;
+  color: #6c7b95;
+}
+
+.dashboard .taskList-container .tasks button {
+  display: inline-block;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  border-radius: 20px;
+  font-size: 2rem;
+  -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+  border: 0;
+  color: #464159;
+  padding: 0.6rem 0.8rem;
+  overflow: hidden;
+  font-size: 3rem;
+  cursor: pointer;
+  margin-top: 1.4rem;
+}
+
+.dashboard .taskList-container .tasks button img {
+  width: 70px;
+  height: 70px;
+}
+
+.taskDetail-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  background: #eae8e8;
+  width: 60%;
+  margin: 0.7rem 0;
+  padding: 1.2rem 1rem;
+}
+
+.taskDetail-container input {
+  border-radius: 20px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  height: 5rem;
+  width: 100%;
+  overflow: hidden;
+  margin: .9rem 0;
+  border: 1px solid #6c7b95;
+  background: #eae8e8;
+  padding: 0.6rem 1.2rem;
+  font-size: 3rem;
+}
+
+.taskDetail-container .btn-complete {
+  display: inline-block;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  border-radius: 20px;
+  font-size: 2rem;
+  -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+  border: 0;
+  color: #464159;
+  padding: 0.6rem 0.8rem;
+  overflow: hidden;
+  font-size: 2rem;
+  cursor: pointer;
+  margin: .9rem 0;
+}
+
+.taskDetail-container select {
+  border-radius: 20px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-size: 1rem;
+  -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+  background: #eae8e8;
+  border: 0;
+  color: #464159;
+  padding: 0.6rem 0.8rem;
+  overflow: hidden;
+  font-size: 2rem;
+  margin: .9rem 0;
+  width: 70%;
+}
+
+.taskDetail-container select option {
+  width: 100%;
+  font-size: 0.7rem;
+}
+
+.taskDetail-container a {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.taskDetail-container a .btn-done {
+  border-radius: 20px;
+  -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+  margin: .9rem 0;
+  background: #eae8e8;
+  border: 0;
+  color: #464159;
+  padding: 0.6rem 0.8rem;
+  overflow: hidden;
+}
+
+.taskDetail-container a .btn-done img {
+  width: 70px;
+  height: 70px;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,258 @@
+$primaryBtn: #464159;
+$secBtn: #6c7b95;
+$backGround: #eae8e8;
+$btnTextColor: #c7f0db;
+
+$boxShdow: -12px -12px 12px 0 rgba(255, 255, 255, 1),
+  12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background: $backGround;
+  height: 100%;
+  background-size: cover;
+  font-family: "Poppins";
+}
+
+
+.navigation {
+  @include flexCenter(column);
+
+  a {
+    background: $backGround;
+    box-shadow: $boxShdow;
+    text-decoration: none;
+    margin: 4rem 0;
+    border-radius: 20px;
+    padding: 0.8rem;
+    h1 {
+      margin: 2rem 0;
+      font-size: 5rem;
+      color: $primaryBtn;
+    }
+  }
+
+}
+
+.container {
+  margin-top: 5rem;
+  @include flexCenter(column);
+  .sign-up {
+    margin: 1rem 0;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: $primaryBtn;
+    background: $backGround;
+    box-shadow: $boxShdow;
+    margin: 4rem 0;
+    border-radius: 20px;
+    padding: 0.8rem;
+    h5 {
+      font-size: 2rem;
+    }
+  }
+  .card {
+    background: $backGround;
+    border: 0;
+    width: 80%;
+    border-radius: 20px;
+    box-shadow: $boxShdow;
+
+    .card-title {
+      color: $secBtn;
+      text-align: center;
+      h2 {
+        margin-top: 1rem;
+        font-size: 4rem;
+      }
+    }
+    .card-body {
+      form {
+        @include flexCenter(column);
+      }
+      input {
+        border-radius: 20px;
+        height: 5rem;
+        width: 100%;
+        overflow: hidden;
+        margin: 0.7rem 0;
+        border: 1px solid $secBtn;
+        padding: 0.6rem 1.2rem;
+        font-size: 3rem;
+      }
+      #user {
+        background: url(../assets/user.svg) no-repeat left center;
+        padding-left: 77px;
+        background-size: 50px 50px;
+        background-position: 12px 14px;
+      }
+      #password {
+        background: url(../assets/password.svg) no-repeat left center;
+        padding-left: 77px;
+        background-size: 50px 50px;
+        background-position: 12px 14px;
+      }
+      button {
+        display: inline-block;
+        border-radius: 20px;
+        background: $backGround;
+        box-shadow: $boxShdow;
+        border: 0;
+        color: $primaryBtn;
+        padding: 0.7rem 1rem;
+        overflow: hidden;
+        font-size: 3rem;
+        cursor: pointer;
+        margin-top: 1rem;
+
+        img {
+          height: 40px;
+          width: 50px;
+        }
+      }
+    }
+  }
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  .taskList-container {
+    align-self: center;
+    box-shadow: $boxShdow;
+    border-radius: 20px;
+    background: $backGround;
+    width: 90%;
+    align-self: center;
+    margin: 1rem 0;
+    padding: 1.2rem 1rem;
+    h3 {
+      text-align: center;
+      font-size: 3.5rem;
+      color: $primaryBtn;
+    }
+    .tasks {
+      display: grid;
+
+      box-shadow: $boxShdow;
+      border-radius: 20px;
+      background: $backGround;
+      margin: 1rem 0.6rem;
+      padding: 1.2rem 1.5rem;
+      a {
+        text-decoration: none;
+        font-size: 3rem;
+        color: $secBtn;
+      }
+      button {
+        display: inline-block;
+        justify-self: end;
+        border-radius: 20px;
+        font-size: 2rem;
+        box-shadow: $boxShdow;
+        border: 0;
+        color: $primaryBtn;
+        padding: 0.6rem 0.8rem;
+        overflow: hidden;
+        font-size: 3rem;
+        cursor: pointer;
+        margin-top: 1.4rem;
+        img {
+          width: 70px;
+          height: 70px;
+        }
+      }
+    }
+  }
+
+  
+}
+
+.taskDetail-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    box-shadow: $boxShdow;
+    border-radius: 20px;
+    background: $backGround;
+    width: 60%;
+    margin: 0.7rem 0;
+    padding: 1.2rem 1rem;
+
+    input {
+        border-radius: 20px;
+        align-self: center;
+        justify-self: center;
+        height: 5rem;
+        width: 100%;
+        overflow: hidden;
+        margin: .9rem 0;
+        border: 1px solid $secBtn;
+        background: $backGround;
+        padding: 0.6rem 1.2rem;
+        font-size: 3rem;
+      }
+      .btn-complete {
+        display: inline-block;
+        align-self: center;
+        justify-self: center;
+        border-radius: 20px;
+        font-size: 2rem;
+        box-shadow: $boxShdow;
+        border: 0;
+        color: $primaryBtn;
+        padding: 0.6rem 0.8rem;
+        overflow: hidden;
+        font-size: 2rem;
+        cursor: pointer;
+        margin: .9rem 0;
+      }
+      select{
+        border-radius: 20px;
+        align-self: center;
+        justify-self: center;
+        font-size: 1rem;
+        box-shadow: $boxShdow;
+        background: $backGround;
+        border: 0;
+        color: $primaryBtn;
+        padding: 0.6rem 0.8rem;
+        overflow: hidden;
+        font-size: 2rem;
+        margin: .9rem 0;
+        width: 70%;
+      }
+      select option{
+          width: 100%;
+          font-size: 0.7rem;
+      }
+      a{
+       justify-self: end;
+        .btn-done{
+            border-radius: 20px;    
+            box-shadow: $boxShdow;
+            margin: .9rem 0;
+            background: $backGround;
+            border: 0;
+            color: $primaryBtn;
+            padding: 0.6rem 0.8rem;
+            overflow: hidden;
+            img {
+                width: 70px;
+                height: 70px;
+              }
+          }
+      }
+
+      
+  }
