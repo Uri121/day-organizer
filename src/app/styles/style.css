@@ -272,6 +272,8 @@ body {
     -ms-flex-item-align: start;
         -ms-grid-row-align: start;
         align-self: start;
+    min-width: 170px;
+    margin-right: 3rem;
   }
 }
 

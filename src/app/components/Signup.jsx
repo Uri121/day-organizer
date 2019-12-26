@@ -18,13 +18,11 @@ const SignupComponent = ({ requestCreateUserAccount, authenticated }) => {
               type="text"
               placeholder="User Name"
               name="userName"
-              defaultValue="Uri"
             />
             <input id="password"
               type="password"
               placeholder="Password"
               name="password"
-              defaultValue="123456"
             />
             {authenticated === mutations.USERNAME_RESERVED  ? (
                 <p>A user by that name already exists.</p>

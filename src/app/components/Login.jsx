@@ -19,14 +19,12 @@ const LoginComponent = ({ authUser, authenticated }) => {
             <input id="user"
               type="text"
               placeholder="User Name"
-              name="userName"
-              defaultValue="Dev"
+              name="userName"            
             />
             <input id="password"
               type="password"
               placeholder="Password"
-              name="password"
-              defaultValue="TUPLES"
+              name="password"           
             />
             {authenticated === mutations.NOT_AUTHENTICATED ? (
               <p>Login incorrect</p>
