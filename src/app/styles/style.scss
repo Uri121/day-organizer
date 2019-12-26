@@ -14,8 +14,8 @@ $boxShdow: -12px -12px 12px 0 rgba(255, 255, 255, 1),
   flex-direction: $direction;
 }
 
-@mixin desktop{
-  @media(min-width:#{$desktop}){
+@mixin desktop {
+  @media (min-width:#{$desktop}) {
     @content;
   }
 }
@@ -30,39 +30,36 @@ body {
   font-family: "Poppins";
 }
 
-
 .navigation {
   @include flexCenter(column);
-  h4{
+  h4 {
     color: $primaryBtn;
     font-family: "Poppins";
   }
   a {
     text-decoration: none;
-    margin: 2rem 0;
+    margin-top: 2rem;
     border-radius: 20px;
     padding: 0.8rem;
-    @include desktop{
+    @include desktop {
       margin: 0;
     }
     h1 {
-      margin: 2rem 0;
+      margin-top: 2rem;
       font-size: 3rem;
       color: $primaryBtn;
-      @include desktop{
+      @include desktop {
         margin: 0;
       }
     }
- 
   }
-
 }
 
 .container {
-  margin-top: 3rem;
+  margin-top: 2rem;
   @include flexCenter(column);
 
-  @include desktop{
+  @include desktop {
     margin-top: 3.2rem;
   }
   .sign-up {
@@ -78,18 +75,16 @@ body {
     border-radius: 20px;
     padding: 0.8rem;
 
-
-    @include desktop{
+    @include desktop {
       margin: 2rem 0;
     }
 
     h5 {
       font-size: 1.5rem;
 
-      @include desktop{
-       font-size: 1.3rem;
+      @include desktop {
+        font-size: 1.3rem;
       }
-
     }
   }
   .card {
@@ -98,17 +93,17 @@ body {
     width: 80%;
     border-radius: 20px;
     box-shadow: $boxShdow;
-    
-      @include desktop{
-        width: fit-content;
-      }
+
+    @include desktop {
+      width: fit-content;
+    }
     .card-title {
       color: $secBtn;
       text-align: center;
       h2 {
         margin-top: 1rem;
         font-size: 3rem;
-        @include desktop{
+        @include desktop {
           font-size: 2.5rem;
         }
       }
@@ -126,7 +121,7 @@ body {
         border: 1px solid $secBtn;
         padding: 0.6rem 1.2rem;
         font-size: 2rem;
-        @include desktop{
+        @include desktop {
           font-size: 1.3rem;
           height: 3rem;
           width: 80%;
@@ -138,11 +133,10 @@ body {
         background-size: 25px 25px;
         background-position: 12px 14px;
 
-        @include desktop{
+        @include desktop {
           padding-left: 55px;
           background-size: 30px 30px;
           background-position: 12px 7px;
-  
         }
       }
       #password {
@@ -150,7 +144,7 @@ body {
         padding-left: 50px;
         background-size: 25px 25px;
         background-position: 12px 14px;
-        @include desktop{
+        @include desktop {
           padding-left: 55px;
           background-size: 30px 30px;
           background-position: 12px 7px;
@@ -168,13 +162,13 @@ body {
         font-size: 1.5rem;
         cursor: pointer;
         margin-top: 1rem;
-        @include desktop{
+        @include desktop {
           font-size: 1.8rem;
         }
         img {
           height: 30px;
           width: 50px;
-          @include desktop{
+          @include desktop {
             height: 30px;
             width: 50px;
           }
@@ -187,7 +181,7 @@ body {
 .dashboard {
   display: grid;
   grid-template-columns: 1fr;
-  @include desktop{
+  @include desktop {
     grid-template-columns: 1fr 1fr;
   }
   justify-items: center;
@@ -200,32 +194,32 @@ body {
     margin: 3rem 0;
     padding: 1.2rem 1rem;
 
-    @include desktop{
+    @include desktop {
       align-self: start;
     }
     h3 {
       text-align: center;
       font-size: 2rem;
       color: $primaryBtn;
-      @include desktop{
+      @include desktop {
         font-size: 2rem;
       }
     }
     .tasks {
       display: grid;
-      margin: 1rem 0.6rem;
-      padding: 1.2rem 1.5rem;
+      padding: 0.3rem 0.5rem;
       a {
         text-decoration: none;
         justify-self: start;
-      box-shadow: $boxShdow;
-      border-radius: 20px;
-      background: $backGround;
-      margin: 0.7rem 0.3rem;
-      padding: .3rem .7rem;
+        box-shadow: $boxShdow;
+        width: 90%;
+        border-radius: 20px;
+        background: $backGround;
+        margin: 0.7rem 0.3rem;
+        padding: 0.3rem 0.7rem;
         font-size: 1.5rem;
         color: $secBtn;
-        @include desktop{
+        @include desktop {
           font-size: 1.5rem;
         }
       }
@@ -242,13 +236,13 @@ body {
         font-size: 3rem;
         cursor: pointer;
         margin-top: 1.4rem;
-        @include desktop{
+        @include desktop {
           font-size: 1.5rem;
         }
         img {
           width: 40px;
           height: 40px;
-          @include desktop{
+          @include desktop {
             width: 50px;
             height: 50px;
           }
@@ -256,106 +250,102 @@ body {
       }
     }
   }
-
-  
 }
 
 .taskDetail-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:
-    "box1 box2"  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "box1 box2"
     "box3 ."
     ".    box4";
-    box-shadow: $boxShdow;
+  box-shadow: $boxShdow;
+  border-radius: 20px;
+  background: $backGround;
+  width: 85%;
+  margin: 0.7rem 0;
+  padding: 1.2rem 1rem;
+
+  input {
+    grid-area: box1;
     border-radius: 20px;
+    align-self: center;
+    justify-self: center;
+    height: 3rem;
+    width: 80%;
+    overflow: hidden;
+    margin: 0.9rem 1rem;
+    border: 1px solid $secBtn;
     background: $backGround;
-    width: 85%;
-    margin: 0.7rem 0;
-    padding: 1.2rem 1rem;
-
-    input {
-      grid-area: box1;
-        border-radius: 20px;
-        align-self: center;
-        justify-self: center;
-        height: 3rem;
-        width: 80%;
-        overflow: hidden;
-        margin: .9rem 1rem;
-        border: 1px solid $secBtn;
-        background: $backGround;
-        padding: 0.6rem 1.2rem;
-        font-size: 1.5rem;
-        @include desktop{
-          font-size: 2rem;
-          height: 3rem;
-        }
-      }
-      .btn-complete {
-        grid-area: box2;
-        align-self: center;
-        justify-self: center;
-        border-radius: 20px;
-        box-shadow: $boxShdow;
-        border: 0;
-        color: $primaryBtn;
-        padding: 0.6rem 0.8rem;
-        overflow: hidden;
-        font-size: 1rem;
-        cursor: pointer;
-        margin: .9rem 0;
-        @include desktop{
-          font-size: 1.5rem;
-        }
-      }
-      select{
-        grid-area: box3;
-        border-radius: 20px;
-        align-self: center;
-        justify-self: center;
-        font-size: 1rem;
-        box-shadow: $boxShdow;
-        background: $backGround;
-        border: 0;
-        color: $primaryBtn;
-        padding: 0.6rem 0.8rem;
-        overflow: hidden;
-        margin: .9rem 0;
-        width: 80%;
-        @include desktop{
-          font-size: 1.5rem;
-        }
-      }
-      select option{
-          font-size: 1rem;
-          @include desktop{
-            font-size: 1.5rem;
-          }
-      }
-      a{
-        grid-area: box4;
-       justify-self: end;
-        .btn-done{   
-            border-radius: 20px;    
-            box-shadow: $boxShdow;
-            margin: .9rem 0;
-            background: $backGround;
-            border: 0;
-            color: $primaryBtn;
-            padding: 0.6rem 0.8rem;
-            overflow: hidden;
-            img {
-                width: 40px;
-                height: 40px;
-                @include desktop{
-                  width: 50px;
-                  height: 50px;
-                }
-              }
-          }
-      }
-
-      
+    padding: 0.6rem 1.2rem;
+    font-size: 1.5rem;
+    @include desktop {
+      font-size: 2rem;
+      height: 3rem;
+    }
   }
+  .btn-complete {
+    grid-area: box2;
+    align-self: center;
+    justify-self: center;
+    border-radius: 20px;
+    box-shadow: $boxShdow;
+    border: 0;
+    color: $primaryBtn;
+    padding: 0.6rem 0.8rem;
+    overflow: hidden;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0.9rem 0;
+    @include desktop {
+      font-size: 1.5rem;
+    }
+  }
+  select {
+    grid-area: box3;
+    border-radius: 20px;
+    align-self: center;
+    justify-self: center;
+    font-size: 1rem;
+    box-shadow: $boxShdow;
+    background: $backGround;
+    border: 0;
+    color: $primaryBtn;
+    padding: 0.6rem 0.8rem;
+    overflow: hidden;
+    margin: 0.9rem 0;
+    width: 80%;
+    @include desktop {
+      font-size: 1.5rem;
+    }
+  }
+  select option {
+    font-size: 1rem;
+    @include desktop {
+      font-size: 1.5rem;
+    }
+  }
+  a {
+    grid-area: box4;
+    justify-self: end;
+    .btn-done {
+      border-radius: 20px;
+      box-shadow: $boxShdow;
+      margin: 0.9rem 0;
+      background: $backGround;
+      border: 0;
+      color: $primaryBtn;
+      padding: 0.6rem 0.8rem;
+      overflow: hidden;
+      img {
+        width: 40px;
+        height: 40px;
+        @include desktop {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+}

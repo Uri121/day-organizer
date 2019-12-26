@@ -31,7 +31,7 @@ body {
 
 .navigation a {
   text-decoration: none;
-  margin: 2rem 0;
+  margin-top: 2rem;
   border-radius: 20px;
   padding: 0.8rem;
 }
@@ -43,7 +43,7 @@ body {
 }
 
 .navigation a h1 {
-  margin: 2rem 0;
+  margin-top: 2rem;
   font-size: 3rem;
   color: #464159;
 }
@@ -55,7 +55,7 @@ body {
 }
 
 .container {
-  margin-top: 3rem;
+  margin-top: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -290,8 +290,7 @@ body {
 .dashboard .taskList-container .tasks {
   display: -ms-grid;
   display: grid;
-  margin: 1rem 0.6rem;
-  padding: 1.2rem 1.5rem;
+  padding: 0.3rem 0.5rem;
 }
 
 .dashboard .taskList-container .tasks a {
@@ -300,10 +299,11 @@ body {
       justify-self: start;
   -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
           box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
+  width: 90%;
   border-radius: 20px;
   background: #eae8e8;
   margin: 0.7rem 0.3rem;
-  padding: .3rem .7rem;
+  padding: 0.3rem 0.7rem;
   font-size: 1.5rem;
   color: #6c7b95;
 }
@@ -356,7 +356,7 @@ body {
       grid-template-columns: 1fr;
   -ms-grid-rows: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
-      grid-template-areas: "box1 box2"   "box3 ." ".    box4";
+      grid-template-areas: "box1 box2" "box3 ." ".    box4";
   -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
           box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
   border-radius: 20px;
@@ -379,7 +379,7 @@ body {
   height: 3rem;
   width: 80%;
   overflow: hidden;
-  margin: .9rem 1rem;
+  margin: 0.9rem 1rem;
   border: 1px solid #6c7b95;
   background: #eae8e8;
   padding: 0.6rem 1.2rem;
@@ -411,7 +411,7 @@ body {
   overflow: hidden;
   font-size: 1rem;
   cursor: pointer;
-  margin: .9rem 0;
+  margin: 0.9rem 0;
 }
 
 @media (min-width: 840px) {
@@ -438,7 +438,7 @@ body {
   color: #464159;
   padding: 0.6rem 0.8rem;
   overflow: hidden;
-  margin: .9rem 0;
+  margin: 0.9rem 0;
   width: 80%;
 }
 
@@ -470,7 +470,7 @@ body {
   border-radius: 20px;
   -webkit-box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
           box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.06);
-  margin: .9rem 0;
+  margin: 0.9rem 0;
   background: #eae8e8;
   border: 0;
   color: #464159;
