@@ -69,7 +69,7 @@ export const store = createStore(
       }
       return groups;
     },
-    users(users = defaultState.groups,action) {
+    users(users = defaultState.users,action) {
       switch(action.type){
         case mutations.SET_STATE:
           return action.state.users;

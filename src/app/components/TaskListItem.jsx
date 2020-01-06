@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import React from "react";
 
-export const TaskListItem = ({ id, name, commentCount, isComplete }) => (
+export const TaskListItem = ({ id, name, isComplete }) => (
   <Link to={`/task/${id}`}>
     <div>
       <span>
